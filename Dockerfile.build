@@ -1,0 +1,6 @@
+FROM maven:3.5-jdk-8-alpine
+
+WORKDIR /usr/src/spring-boot-docker-ci-example
+COPY pom.xml .
+RUN mvn -B -f pom.xml -s /usr/share/maven/ref/settings-docker.xml dependency:resolve
+COPY . .

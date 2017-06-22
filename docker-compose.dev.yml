@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+  springboot:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    image: demo/springboot-dev
+    volumes:
+      - ~/logs:/usr/logs

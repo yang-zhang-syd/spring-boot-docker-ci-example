@@ -1,0 +1,7 @@
+version: '2'
+
+services:
+  springboot:
+    image: demo/springboot
+    volumes:
+      - ~/logs:/usr/logs

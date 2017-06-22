@@ -1,0 +1,6 @@
+FROM openjdk:8-jre-alpine
+
+WORKDIR /usr/app
+COPY ./target/spring-boot-docker-ci-example-0.0.1-SNAPSHOT.jar .
+
+ENTRYPOINT ["java", "-jar", "/usr/app/spring-boot-docker-ci-example-0.0.1-SNAPSHOT.jar"]

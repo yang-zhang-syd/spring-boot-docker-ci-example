@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+  springboot:
+    build:
+      context: .
+      dockerfile: Dockerfile.build
+    image: demo/springboot-build
+    volumes:
+      # map the output folder to local folder
+      - ./target:/usr/src/spring-boot-docker-ci-example/target
+    # The command to package the jar. This will start when the container boots up.
+    command: /bin/bash -c "mvn -B -s /usr/share/maven/ref/settings-docker.xml package -DskipTests"
